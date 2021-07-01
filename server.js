@@ -26,6 +26,7 @@ mongoose.connect(
 app.use(morgan("common"));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "./public")));
 
 // Routes
 app.use("/api", pushRoute);

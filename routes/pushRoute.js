@@ -39,7 +39,7 @@ router.post("/notify", async (req, res) => {
 router.post("/subscribe", async (req, res) => {
   try {
     const subscribe = req.body;
-    console.log(subscribe);
+    console.log("subscribe", subscribe);
 
     const payload = JSON.stringify({
       title: "Hello!",
@@ -47,7 +47,7 @@ router.post("/subscribe", async (req, res) => {
     });
 
     const status = await webpush.sendNotification(subscribe, payload);
-    console.log(status);
+    console.log("status", status);
 
     res.json({ error: false, msg: "success" });
   } catch (error) {
